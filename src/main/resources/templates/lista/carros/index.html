@@ -16,6 +16,7 @@
 					<th>Ano</th>
 					<th>Modelo</th>
 					<th>Marca</th>
+					<th>Ações</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -25,7 +26,10 @@
 					<td th:text="${carro.ano}"></td>
 					<td th:text="${carro.modelo}"></td>
 					<td th:text="${carro.marca}"></td>
-					
+					<td>
+						<a th:href="@{/lista/carros/{id}(id=${carro.id})}">Alterar</a>
+						<a th:href="@{/lista/carros/excluir/{id}(id=${carro.id})}">Excluir</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
