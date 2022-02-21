@@ -1,24 +1,36 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8" />
-<title>Sistema de Carros</title>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form.css">
+    <title>Cadastro de Carros</title>
 </head>
+
 <body>
-	<div class="container my-2">
-		<h2>Adicionar Carro</h2>
-		<form action="#" th:action="@{/lista/carros/salvar}" th:object="${carroModel}" method="POST">
-			<input type="hidden" id="id" th:field="*{id}">
-			<input type="text" th:field="*{marca}" placeholder="Marca" class="form-control mb-4 col-4">
-      		<input type="text" th:field="*{modelo}" placeholder="Modelo" class="form-control mb-4 col-4">
-      		<input type="number" th:field="*{ano}" placeholder="Ano" class="form-control mb-4 col-4">
-			<input type="text" th:field="*{valor}" placeholder="Valor" class="form-control mb-4 col-4">
-      		
-			<button type="submit" class="btn btn-info col-2">Salvar</button>
-		</form>
-		<hr>
-		<a th:href="@{/lista/carros}">Retornar para a lista de carros</a>
-	</div>
+    <header class="cabecalho">
+        <h1>CarStock</h1>
+    </header>
+    <div class="principal">
+        <div class="container">
+            <h1>Cadastro de veículos</h1>
+            <div class="inputs">
+                <form action="#" th:action="@{/lista/carros/salvar}" th:object="${carroModel}" method="POST">
+                    <input type="hidden" id="id" th:field="*{id}">
+                    <label>Marca<input type="text" th:field="*{marca}" placeholder="Marca do veículo"></label>
+                    <label>Modelo<input type="text" th:field="*{modelo}" placeholder="Modelo do veículo"></label>
+                    <label>Ano<input type="number" th:field="*{ano}" placeholder="Ano de fabricação"></label>
+                    <label>Valor<input type="text" th:field="*{valor}" placeholder="R$0.00"></label>
+                    <label>Categoria<input type="text" th:field="*{categoria}" placeholder="NOVO/SEMINOVO"></label>
+                    <button id="salvar" type="submit" >Salvar</button>
+                </form>
+                <hr>
+                <a id="return" th:href="@{/lista/carros}">Retornar para a lista de carros</a>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

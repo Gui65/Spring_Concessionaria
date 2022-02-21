@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E8F1F2;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecalho {
+    background-color: #1B98E0;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    color: #E8F1F2;
+}
+
+.principal {
+    width: 100%;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    margin-top: 1%;
+    background: #fff;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    padding: 1%;
+
+}
+
+.container h1 {
+    color: #1B98E0;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.container .inputs {
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    color: #898989;
+    text-align: center;
+    font-weight: 400;
+    width: 90%;
+}
+
+.container .inputs label {
+    font-size: 24px;
+    font-weight: 300;
+    color: #1B98E0;
+}
+
+.container .inputs input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid #1B98E0;
+    outline: 0;
+    color: #898989;
+}
+
+.container #salvar{
+    height: 40px;
+    border: none;
+    line-height: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 10%;
+    color: #E8F1F2;
+    border-radius: 20px;
+    font-size: 24px;
+    background: #1B98E0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.container #salvar:hover{
+    border: 1px solid #1B98E0;
+    background-color: #fff;
+    color: #1B98E0;
+}
+.container #return{
+	color: #898989;
+}
+.container #return:hover{
+    color: #1B98E0;
+    cursor: pointer;
+}
