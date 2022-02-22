@@ -25,7 +25,7 @@ public class PopulacaoInicialBanco implements CommandLineRunner {
 	private ClienteRepository clienteRepository;
 	
 	@Autowired
-	private FuncionarioRepository gerenteRepository;
+	private FuncionarioRepository funcionarioRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -45,8 +45,8 @@ public class PopulacaoInicialBanco implements CommandLineRunner {
 		FuncionarioModel gerente1 = new FuncionarioModel("Joao", "77777777", "joao@hotmail.com", "Joao");
 		FuncionarioModel gerente2 = new FuncionarioModel("Roberta", "6666666", "roberta@hotmail.com", "Roberta");
 		
-		gerenteRepository.save(gerente1);
-		gerenteRepository.save(gerente2);
+		funcionarioRepository.save(gerente1);
+		funcionarioRepository.save(gerente2);
 		
 	}
 }

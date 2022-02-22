@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Clientes</title>
+    <title>Funcionários</title>
 
 </head>
 <header class="cabecalho">
@@ -16,9 +16,9 @@
 <body>
     <div class="principal">
         <div class="container">
-            <a id="addCarro" th:href="@{/lista/clientes/novo}">Adicionar Cliente</a>
+            <a id="addCarro" th:href="@{/lista/funcionarios/novo}">Adicionar Funcionario</a>
             <a id="return" th:href="@{/home/funcionario}">Retornar para o painel de gerenciamentos</a>
-            <h1>Lista de Clientes</h1>
+            <h1>Lista de Funcionários</h1>
             <div class="table">
                 <table border="1" class="table table-striped table-responsive-md">
                     <thead>
@@ -32,15 +32,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="cliente : ${listaClientes}">
-                            <td th:text="${cliente.id}"></td>
-                            <td th:text="${cliente.nome}"></td>
-                            <td th:text="${cliente.telefone}"></td>
-                            <td th:text="${cliente.email}"></td>
-                            <td th:text="${cliente.senha}"></td>
+                        <tr th:each="funcionario : ${listaFuncionarios}">
+                            <td th:text="${funcionario.id}"></td>
+                            <td th:text="${funcionario.nome}"></td>
+                            <td th:text="${funcionario.telefone}"></td>
+                            <td th:text="${funcionario.email}"></td>
+                            <td th:text="${funcionario.senha}"></td>
                             <td>
-                                <a class="buttom" id="alterar" th:href="@{/lista/clientes/{id}(id=${cliente.id})}">Alterar</a>
-                                <a class="buttom" id="excluir" th:href="@{/lista/clientes/excluir/{id}(id=${cliente.id})}">Excluir</a>
+                                <a class="buttom" id="alterar" th:href="@{/lista/funcionarios/{id}(id=${funcionario.id})}">Alterar</a>
+                                <a class="buttom" id="excluir" th:href="@{/lista/funcionarios/excluir/{id}(id=${funcionario.id})}">Excluir</a>
                             </td>
                         </tr>
                     </tbody>

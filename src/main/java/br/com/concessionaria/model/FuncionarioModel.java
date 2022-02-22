@@ -10,10 +10,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TB_GERENTE")
 public class FuncionarioModel extends PessoaModel{
-
+	
+	public FuncionarioModel() {
+		
+	}
+	
 	public FuncionarioModel(String nome, String telefone, String email, String senha) {
 		super(nome, telefone, email, senha);
-		// TODO Auto-generated constructor stub
 	}
 	
 	
