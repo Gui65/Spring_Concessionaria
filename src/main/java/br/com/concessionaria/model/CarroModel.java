@@ -11,6 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import br.com.concessionaria.enums.CategoriaCarro;
+import br.com.concessionaria.enums.StatusCarro;
 
 @Entity
 @Table(name = "TB_CARRO")
@@ -37,10 +38,9 @@ public class CarroModel {
 	@Column(name = "mc_marca")
 	private String marca;
 	
-	@ManyToOne
-	@JoinColumn(name = "cliente_id")
-	private ClienteModel cliente;
-
+	@Column(name = "st_status")
+	private StatusCarro status;
+	
 	public CarroModel() {
 
 	}
@@ -51,14 +51,21 @@ public class CarroModel {
 		this.ano = ano;
 		this.modelo = modelo;
 		this.marca = marca;
+		this.status = StatusCarro.VENDA;
+	}
+	
+	
+	public StatusCarro getStatus() {
+		return status;
 	}
 
-
+	public void setStatusCarro(StatusCarro status) {
+		this.status = status;
+	}
 
 	public CategoriaCarro getCategoria() {
 		return categoria;
 	}
-
 
 
 	public void setCategoria(CategoriaCarro categoria) {
@@ -77,8 +84,6 @@ public class CarroModel {
 		this.marca = marca;
 	}
 
-
-
 	public Long getId() {
 		return id;
 	}
@@ -86,8 +91,6 @@ public class CarroModel {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	
 
 	public Double getValor() {
 		return valor;

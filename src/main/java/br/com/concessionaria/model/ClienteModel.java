@@ -20,9 +20,7 @@ public class ClienteModel extends PessoaModel{
     @Temporal(TemporalType.DATE)
 	private Calendar dataCompra;
 
-    @OneToMany(mappedBy = "cliente")
-    private Set<CarroModel> carroModel;
-    
+ 
 	public ClienteModel() {
 		
 	}
@@ -40,12 +38,5 @@ public class ClienteModel extends PessoaModel{
 		this.dataCompra = dataCompra;
 	}
 
-	public Set<CarroModel> getCarroModel() {
-		return carroModel;
-	}
-
-	public void setCarroModel(Set<CarroModel> carroModel) {
-		this.carroModel = carroModel;
-	}
 
 }

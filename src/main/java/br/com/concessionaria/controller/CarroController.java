@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import br.com.concessionaria.enums.StatusCarro;
 import br.com.concessionaria.model.CarroModel;
 import br.com.concessionaria.repository.CarroRepository;
 
@@ -46,6 +47,13 @@ public class CarroController {
 
 	@PostMapping("/lista/carros/salvar")
 	public String salvarPessoa(@ModelAttribute("carroModel") CarroModel carroModel) {
+		if(carroModel.getStatus() == null || carroModel.getStatus() == StatusCarro.VENDA) {
+			carroModel.setStatusCarro(StatusCarro.VENDA);
+			System.out.println("A venda");
+		}else {
+			carroModel.setStatusCarro(StatusCarro.VENDIDO);
+			System.out.println("Vendido");
+		}
 		carroRepository.save(carroModel);
 		return "redirect:/lista/carros";
 	}

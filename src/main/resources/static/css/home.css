@@ -67,3 +67,13 @@ body {
     background-color: #1B98E0;
     color: #E8F1F2;
 }
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1B98E0;
+    border-radius: 5px;
+}

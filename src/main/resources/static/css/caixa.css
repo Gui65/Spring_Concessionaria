@@ -42,7 +42,8 @@ body {
 .container h1{
     color: #1B98E0;
     text-align: center;
-    margin-top: 1%;
+    margin-top: 5%;
+   
 }
 
 .container #addCarro{
@@ -143,6 +144,27 @@ body {
 .container #return:hover{
     color: #1B98E0;
     cursor: pointer;
+}
+
+.valorFinal{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	margin-top: 5%;
+	
+}
+
+.valorFinal span{
+	color: #1B98E0;
+	font-size: 25px;
+}
+
+.container #title{
+	margin-top: 2%;
+	margin-left:10%;
+	float: left;
+	color: #1B98E0;
+	font-size: 20px;
 }
 
 ::-webkit-scrollbar {

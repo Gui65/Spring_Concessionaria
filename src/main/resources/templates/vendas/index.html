@@ -16,35 +16,29 @@
 <body>
     <div class="principal">
         <div class="container">
-            <a id="addCarro" th:href="@{/lista/carros/novo}">Adicionar Carro</a>
-            <a id="return" th:href="@{/home/funcionario}">Retornar para o painel de gerenciamentos</a>
+            <a id="return" th:href="@{/}">Retornar para home</a>
             <h1>Lista de Carros</h1>
             <div class="table">
                 <table border="1" class="table table-striped table-responsive-md">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Valor</th>
                             <th>Ano</th>
                             <th>Modelo</th>
                             <th>Marca</th>
                             <th>Categoria</th>
-                            <th>Status</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="carro : ${listaCarros}">
-                            <td th:text="${carro.id}"></td>
                             <td th:text="${carro.valor}"></td>
                             <td th:text="${carro.ano}"></td>
                             <td th:text="${carro.modelo}"></td>
                             <td th:text="${carro.marca}"></td>
                             <td th:text="${carro.categoria.descricao}"></td>
-                            <td th:text="${carro.status.descricao}"></td>
                             <td>
-                                <a class="buttom" id="alterar" th:href="@{/lista/carros/{id}(id=${carro.id})}">Alterar</a>
-                                <a class="buttom" id="excluir" th:href="@{/lista/carros/excluir/{id}(id=${carro.id})}">Excluir</a>
+                                <a class="buttom" id="alterar" th:href="@{/vendas/comprar/{id}(id=${carro.id})}">Comprar</a>
                             </td>
                         </tr>
                     </tbody>

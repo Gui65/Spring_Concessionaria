@@ -108,3 +108,13 @@ body {
     color: #1B98E0;
     cursor: pointer;
 }
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1B98E0;
+    border-radius: 5px;
+}

@@ -54,7 +54,7 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     border-radius: 20px;
     font-size: 30px;
     font-weight: 400;
@@ -66,4 +66,31 @@ body {
 .container .buttom:hover{
     background-color: #1B98E0;
     color: #E8F1F2;
+}
+
+.container #return{
+	display: block;
+	width: 20%;
+	color: #898989;
+	align-items: center;
+	margin-top: 2%;
+	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+	
+}
+
+.container #return:hover{
+    color: #1B98E0;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1B98E0;
+    border-radius: 5px;
 }

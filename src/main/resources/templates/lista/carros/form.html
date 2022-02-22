@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
                     <label>Ano<input type="number" th:field="*{ano}" placeholder="Ano de fabricação"></label>
                     <label>Valor<input type="text" th:field="*{valor}" placeholder="R$0.00"></label>
                     <label>Categoria<input type="text" th:field="*{categoria}" placeholder="NOVO/SEMINOVO"></label>
-                    <button id="salvar" type="submit" >Salvar</button>
+                 	  <button id="salvar" type="submit" >Salvar</button>
                 </form>
                 <hr>
                 <a id="return" th:href="@{/lista/carros}">Retornar para a lista de carros</a>
