@@ -1,14 +1,16 @@
-package br.com.projetointegracao.model;
+package br.com.concessionaria.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import br.com.projetointegracao.enums.CategoriaCarro;
+import br.com.concessionaria.enums.CategoriaCarro;
 
 @Entity
 @Table(name = "TB_CARRO")
@@ -34,6 +36,10 @@ public class CarroModel {
 	
 	@Column(name = "mc_marca")
 	private String marca;
+	
+	@ManyToOne
+	@JoinColumn(name = "cliente_id")
+	private ClienteModel cliente;
 
 	public CarroModel() {
 

@@ -1,4 +1,4 @@
-package br.com.projetointegracao.enums;
+package br.com.concessionaria.enums;
 
 public enum CategoriaCarro {
 	SEMINOVO("SemiNovo"), NOVO("Novo");

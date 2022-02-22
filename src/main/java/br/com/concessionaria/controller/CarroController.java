@@ -1,4 +1,4 @@
-package br.com.projetointegracao.controller;
+package br.com.concessionaria.controller;
 
 import java.util.Optional;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import br.com.projetointegracao.model.CarroModel;
-import br.com.projetointegracao.repository.CarroRepository;
+import br.com.concessionaria.model.CarroModel;
+import br.com.concessionaria.repository.CarroRepository;
 
 @Controller
 public class CarroController {
