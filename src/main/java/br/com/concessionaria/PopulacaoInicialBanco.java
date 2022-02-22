@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 import br.com.concessionaria.enums.CategoriaCarro;
 import br.com.concessionaria.model.CarroModel;
 import br.com.concessionaria.model.ClienteModel;
-import br.com.concessionaria.model.GerenteModel;
+import br.com.concessionaria.model.FuncionarioModel;
 import br.com.concessionaria.repository.CarroRepository;
 import br.com.concessionaria.repository.ClienteRepository;
-import br.com.concessionaria.repository.GerenteRepository;
+import br.com.concessionaria.repository.FuncionarioRepository;
 
 @Component
 @Transactional
@@ -25,7 +25,7 @@ public class PopulacaoInicialBanco implements CommandLineRunner {
 	private ClienteRepository clienteRepository;
 	
 	@Autowired
-	private GerenteRepository gerenteRepository;
+	private FuncionarioRepository gerenteRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -42,8 +42,8 @@ public class PopulacaoInicialBanco implements CommandLineRunner {
 		clienteRepository.save(cliente1);
 		clienteRepository.save(cliente2);
 		
-		GerenteModel gerente1 = new GerenteModel("Joao", "77777777", "joao@hotmail.com", "Joao");
-		GerenteModel gerente2 = new GerenteModel("Roberta", "6666666", "roberta@hotmail.com", "Roberta");
+		FuncionarioModel gerente1 = new FuncionarioModel("Joao", "77777777", "joao@hotmail.com", "Joao");
+		FuncionarioModel gerente2 = new FuncionarioModel("Roberta", "6666666", "roberta@hotmail.com", "Roberta");
 		
 		gerenteRepository.save(gerente1);
 		gerenteRepository.save(gerente2);

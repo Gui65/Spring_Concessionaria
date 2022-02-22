@@ -9,9 +9,9 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name = "id_gerente")
 @Entity
 @Table(name = "TB_GERENTE")
-public class GerenteModel extends PessoaModel{
+public class FuncionarioModel extends PessoaModel{
 
-	public GerenteModel(String nome, String telefone, String email, String senha) {
+	public FuncionarioModel(String nome, String telefone, String email, String senha) {
 		super(nome, telefone, email, senha);
 		// TODO Auto-generated constructor stub
 	}
