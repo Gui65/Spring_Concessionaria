@@ -20,12 +20,13 @@
 
 <body>
 	<header>
-		<h1>Login-helper</h1>
+		<h1>CarStock</h1>
 	</header>
 
 	<main>
 		<form action="#" th:action="@{/loginCliente}"
 			th:object="${clienteDto}" method="POST">
+			<span>Seja bem vindo!</span>
 			<section class="inputs-container">
 				<input type="email" th:field="*{email}" id="email" name="email"
 					placeholder="example@gmail.com">
