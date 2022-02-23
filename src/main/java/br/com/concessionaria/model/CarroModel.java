@@ -1,12 +1,12 @@
 package br.com.concessionaria.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -40,6 +40,9 @@ public class CarroModel {
 	
 	@Column(name = "st_status")
 	private StatusCarro status;
+	
+	@OneToOne(mappedBy = "carroModel")
+	private VendasModel venda;
 	
 	public CarroModel() {
 
@@ -115,5 +118,15 @@ public class CarroModel {
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
+
+	public VendasModel getVenda() {
+		return venda;
+	}
+
+	public void setVenda(VendasModel venda) {
+		this.venda = venda;
+	}
+	
+	
 
 }

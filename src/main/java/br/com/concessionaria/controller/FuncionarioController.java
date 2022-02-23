@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import br.com.concessionaria.enums.Role;
 import br.com.concessionaria.model.FuncionarioModel;
 import br.com.concessionaria.repository.FuncionarioRepository;
 
@@ -46,6 +47,7 @@ public class FuncionarioController {
 
 	@PostMapping("/lista/funcionarios/salvar")
 	public String salvarFuncionario(@ModelAttribute("funcionarioModel") FuncionarioModel funcionarioModel) {
+		funcionarioModel.setRole(Role.ADMIN);
 		funcionarioRepository.save(funcionarioModel);
 		return "redirect:/lista/funcionarios";
 	}

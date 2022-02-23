@@ -1,11 +1,7 @@
 package br.com.concessionaria.model;
 
-import java.util.Calendar;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +9,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import br.com.concessionaria.enums.Role;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
@@ -36,6 +34,9 @@ public class PessoaModel {
 
 	@Column(name = "pw_senha")
 	private String senha;
+	
+	@Column(name = "rl_role")
+	private Role role;
 
 	public PessoaModel() {
 	}
@@ -87,5 +88,15 @@ public class PessoaModel {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	
+	 
 
 }

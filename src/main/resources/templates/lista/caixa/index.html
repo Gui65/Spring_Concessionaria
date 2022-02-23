@@ -24,23 +24,24 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Valor</th>
-                            <th>Ano</th>
-                            <th>Modelo</th>
+                            <th>Comprador</th>
+                            <th>Data da Compra</th>
                             <th>Marca</th>
-                            <th>Categoria</th>
-                            <th>Status</th>
+                            <th>Modelo</th>
+                            <th>Valor do carro</th>
+                            <th>Valor da venda</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="carro : ${listaCarros}">
-                            <td th:text="${carro.id}"></td>
-                            <td th:text="${carro.valor}"></td>
-                            <td th:text="${carro.ano}"></td>
-                            <td th:text="${carro.modelo}"></td>
-                            <td th:text="${carro.marca}"></td>
-                            <td th:text="${carro.categoria.descricao}"></td>
-                            <td th:text="${carro.status.descricao}"></td>
+                        <tr th:each="vendas : ${listaVendas}">
+                            <td th:text="${vendas.CarroModel.id}"></td>
+                            <td th:text="${vendas.ClienteModel.nome}"></td>
+                            <td th:text="${#calendars.format(vendas.dataCompra, 'dd/MMM/yyyy')}"></td>
+                            <td th:text="${vendas.CarroModel.marca}"></td>
+                            <td th:text="${vendas.CarroModel.modelo}"></td>
+                            <td th:text="${vendas.CarroModel.valor}"></td>
+                            <td th:text="${vendas.valorVenda}"></td>
+                            
                             
                         </tr>
                     </tbody>

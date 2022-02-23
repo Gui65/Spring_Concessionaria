@@ -47,13 +47,7 @@ public class CarroController {
 
 	@PostMapping("/lista/carros/salvar")
 	public String salvarPessoa(@ModelAttribute("carroModel") CarroModel carroModel) {
-		if(carroModel.getStatus() == null || carroModel.getStatus() == StatusCarro.VENDA) {
-			carroModel.setStatusCarro(StatusCarro.VENDA);
-			System.out.println("A venda");
-		}else {
-			carroModel.setStatusCarro(StatusCarro.VENDIDO);
-			System.out.println("Vendido");
-		}
+		carroModel.setStatusCarro(StatusCarro.VENDA);
 		carroRepository.save(carroModel);
 		return "redirect:/lista/carros";
 	}

@@ -1,5 +1,6 @@
 package br.com.concessionaria.controller;
 
+import java.util.Calendar;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +28,13 @@ public class VendasController {
 	
 	@Autowired
 	ClienteRepository clienteRepository;
+
 	
 	@GetMapping("/vendas")
 	public String vendas(Model model) {
 		model.addAttribute("listaCarros", carroRepository.findAllAtivas());
 		return "vendas/index";
 	}
-	
-	
 	
 	@GetMapping("/vendas/comprar/{id}")
 	public String comprar(@PathVariable("id")Long id, Model model) {
@@ -52,8 +52,18 @@ public class VendasController {
 		venda.setCarroModel(carroOpt.get());
 		venda.setClienteModel(clienteOpt.get());
 		venda.setValorVenda(carroOpt.get().getValor());
-		vendasRepository.save(venda);
+		venda.setDataCompra(Calendar.getInstance());
 		
+		if(clienteOpt.get().getVendas().isEmpty()) {
+			double desconto = carroOpt.get().getValor() * 0.01;
+			venda.setValorVenda(carroOpt.get().getValor() - desconto);
+			vendasRepository.save(venda);
+			clienteOpt.get().getVendas().add(venda);
+		}else {
+			venda.setValorVenda(carroOpt.get().getValor());
+			vendasRepository.save(venda);
+			clienteOpt.get().getVendas().add(venda);
+		}
 		carroOpt.get().setStatusCarro(StatusCarro.VENDIDO);
 		carroRepository.save(carroOpt.get());
 		return "redirect:/vendas";
@@ -61,7 +71,7 @@ public class VendasController {
 	
 	@GetMapping("/lista/caixa")
 	public String caixa(Model model) {
-		model.addAttribute("listaCarros", carroRepository.findAllInativos());
+		model.addAttribute("listaVendas", vendasRepository.findAll());
 		model.addAttribute("caixaFinal", carroRepository.valorFinal());
 		return "lista/caixa/index";
 	}
@@ -75,5 +85,6 @@ public class VendasController {
 		
 		vendasRepository.delete(vendaOpt.get());
 		return "redirect:/vendas";
+		
 	}
 }

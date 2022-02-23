@@ -18,4 +18,5 @@ public interface CarroRepository extends CrudRepository<CarroModel, Long>{
 	
 	@Query(value = "select sum (vl_valor_venda) from tb_vendas", nativeQuery= true)
 	Double valorFinal();
+	
 }
