@@ -90,4 +90,16 @@ public class FuncionarioController {
 		return "redirect:/home/funcionario";
 
 	}
+	
+	@GetMapping("/cadastroFuncionario")
+	public String cadastro(@ModelAttribute("clienteModel") FuncionarioModel funcionarioModel) {
+		return "login/cadastroFuncionario";
+	}
+	
+	@PostMapping("/cadastroFuncionario")
+	public String cadastrarCliente(@ModelAttribute("clienteModel") FuncionarioModel funcionarioModel) {
+		funcionarioModel.setRole(Role.ADMIN);
+		funcionarioRepository.save(funcionarioModel);
+		return "redirect:/loginFuncionario";
+	}
 }

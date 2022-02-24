@@ -34,7 +34,7 @@ public class ClienteController {
 	}
 
 	@GetMapping("/lista/clientes/novo")
-	public String novoCarro(@ModelAttribute("clienteModel") ClienteModel clienteModel) {
+	public String novoCliente(@ModelAttribute("clienteModel") ClienteModel clienteModel) {
 		return "lista/clientes/form";
 	}
 
@@ -86,5 +86,17 @@ public class ClienteController {
 
 		return "redirect:/vendas";
 
+	}
+	
+	@GetMapping("/cadastroCliente")
+	public String cadastro(@ModelAttribute("clienteModel") ClienteModel clienteModel) {
+		return "login/cadastroCliente";
+	}
+	
+	@PostMapping("/cadastroCliente")
+	public String cadastrarCliente(@ModelAttribute("clienteModel") ClienteModel clienteModel) {
+		clienteModel.setRole(Role.USER);
+		clienteRepository.save(clienteModel);
+		return "redirect:/loginCliente";
 	}
 }

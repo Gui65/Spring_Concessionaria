@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/form.css">
+    <title>Cadastro de Clientes</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>CarStock</h1>
+    </header>
+    <div class="principal">
+        <div class="container">
+            <h1>Cadastro de Clientes</h1>
+            <div class="inputs">
+                <form action="#" th:action="@{/lista/clientes/salvar}" th:object="${clienteModel}" method="POST">
+                    <input type="hidden" id="id" th:field="*{id}">
+                    <label>Nome<input type="text" th:field="*{nome}" placeholder="Digite seu nome"></label>
+                    <label>Telefone<input type="text" th:field="*{telefone}" placeholder="Digite seu telefone"></label>
+                    <label>Email<input type="email" th:field="*{email}" placeholder="Digite seu email"></label>
+                    <label>Senha<input type="password" th:field="*{senha}" placeholder="Digite sua senha"></label>
+                    <button id="salvar" type="submit" >Salvar</button>
+                </form>
+                <hr>
+                <a id="return" th:href="@{/loginCliente}">Retornar para a tela de login</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
