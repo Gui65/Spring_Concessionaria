@@ -22,7 +22,10 @@ public class ClienteController {
 
 	@Autowired
 	private ClienteRepository clienteRepository;
-
+	
+	private static ClienteDto clienteStatic;
+	
+	
 	public ClienteController(ClienteRepository clienteRepository) {
 		this.clienteRepository = clienteRepository;
 	}
@@ -83,7 +86,10 @@ public class ClienteController {
 			ra.addFlashAttribute("mensagem", "Email ou Senha inválidas");
 			return "redirect:/loginCliente";
 		}
-
+		
+		//getClienteStatic().setEmail(cliente.getEmail());
+		//getClienteStatic().setSenha(cliente.getSenha());
+		setClienteStatic(clienteDto);
 		return "redirect:/vendas";
 
 	}
@@ -99,4 +105,14 @@ public class ClienteController {
 		clienteRepository.save(clienteModel);
 		return "redirect:/loginCliente";
 	}
+	
+	public static ClienteDto getClienteStatic() {
+		return clienteStatic;
+	}
+
+	public static void setClienteStatic(ClienteDto clienteStatic) {
+		ClienteController.clienteStatic = clienteStatic;
+	}
+	
+	
 }

@@ -17,7 +17,7 @@
         <div class="container">
             <h1>Cadastro de Clientes</h1>
             <div class="inputs">
-                <form action="#" th:action="@{/lista/clientes/salvar}" th:object="${clienteModel}" method="POST">
+                <form action="#" th:action="@{/cadastroCliente}" th:object="${clienteModel}" method="POST">
                     <input type="hidden" id="id" th:field="*{id}">
                     <label>Nome<input type="text" th:field="*{nome}" placeholder="Digite seu nome"></label>
                     <label>Telefone<input type="text" th:field="*{telefone}" placeholder="Digite seu telefone"></label>
