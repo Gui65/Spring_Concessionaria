@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 import br.com.concessionaria.model.ClienteModel;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<ClienteModel, Long>{
-	
+public interface ClienteRepository extends JpaRepository<ClienteModel, Long> {
+
 	@Query("Select c from ClienteModel c where c.email = ?1 and c.senha = ?2")
 	ClienteModel findByEmailAndSenha(@Param("email") String email, @Param("senha") String password);
-	
-	}
+
+}

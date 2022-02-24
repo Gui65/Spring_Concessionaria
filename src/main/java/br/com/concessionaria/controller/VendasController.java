@@ -28,7 +28,9 @@ public class VendasController {
 	
 	@Autowired
 	ClienteRepository clienteRepository;
-
+	
+	
+	ClienteModel clienteModel;
 	
 	@GetMapping("/vendas")
 	public String vendas(Model model) {
@@ -38,7 +40,6 @@ public class VendasController {
 	
 	@GetMapping("/vendas/comprar/{id}")
 	public String comprar(@PathVariable("id")Long id, Model model) {
-		ClienteModel clienteModel;
 		Optional<ClienteModel> clienteOpt = clienteRepository.findById(1L);
 		if (clienteOpt.isEmpty()) {
 			throw new IllegalArgumentException("Cliente invalído");

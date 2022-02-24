@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login-Cliente</title>
+<title>Login-Funcionario</title>
 <link rel="stylesheet" type="text/css" href="../static/css/login.css"
 	th:href="@{/css/login.css}">
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +24,8 @@
 	</header>
 
 	<main>
-		<form action="#" th:action="@{/loginCliente}"
-			th:object="${clienteDto}" method="POST">
+		<form action="#" th:action="@{/loginFuncionario}"
+			th:object="${funcionarioDto}" method="POST">
 			<span>Seja bem vindo!</span>
 			<section class="inputs-container">
 				<input type="email" th:field="*{email}" id="email" name="email"
@@ -60,7 +61,7 @@
 
 			<footer>
 				<hr>
-				<span>Ainda não tem uma conta? <a th:href="@{/lista/clientes/novo}">Cadastre-se</a></span>
+				
 			</footer>
 		</form>
 		

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.concessionaria.dto.ClienteDto;
 import br.com.concessionaria.enums.Role;
@@ -73,16 +74,16 @@ public class ClienteController {
 	}
 
 	@PostMapping("/loginCliente")
-	public String efetuarLogin(ModelMap model, ClienteDto clienteDto) {
+	public String efetuarLogin(ModelMap model, ClienteDto clienteDto, RedirectAttributes ra) {
 
 		ClienteModel cliente = clienteRepository.findByEmailAndSenha(clienteDto.getEmail(), clienteDto.getSenha());
 
 		if (cliente == null) {
-			//session.setAttribute("clienteLogado", cliente);
-
-			return "redirect:/loginCliente#bg";
+			// Enviar mensagem de erro
+			ra.addFlashAttribute("mensagem", "Email ou Senha inválidas");
+			return "redirect:/loginCliente";
 		}
-		
+
 		return "redirect:/vendas";
 
 	}
